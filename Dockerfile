@@ -12,7 +12,7 @@ COPY package*.json ./
 
 # Install dependencies
 # --omit=dev keeps it smaller
-RUN npm ci --omit=dev
+RUN npm install --omit=dev
 
 # Copy the rest of the app
 COPY . .
@@ -28,4 +28,5 @@ USER pptruser
 EXPOSE 3000
 
 # Start the app
+
 CMD [ "node", "index.js" ]
